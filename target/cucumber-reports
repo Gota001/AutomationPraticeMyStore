@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow: scroll;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment {
+  background-color: #ebebeb;
+  padding: 0.5em;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"13.2.1","implementation":{"name":"cucumber-jvm","version":"6.9.1"},"runtime":{"name":"Java HotSpot(TM) 64-Bit Server VM","version":"25.291-b10"},"os":{"name":"Windows 10"},"cpu":{"name":"amd64"}}},{"testRunStarted":{"timestamp":{"seconds":"1623783400","nanos":445000000}}},{"source":{"uri":"file:///C:/Users/Hp/TestesNovigi/automationPratice/src/test/resources/features/CadastroCliente.feature","data":"#language: pt\r\nFuncionalidade: Cadastro de clientes no e-commerce My Store \r\n\r\n@CadastroDeCliente\r\nCenário: Cadastro de cliente válido\r\n\tDado que seja acessada a opção de cadastro na aplicação My Store\r\n\tQuando o cliente inserir seus dados pessoais com nome: \u0027\u003ccliente\u003e\u0027, email: \u0027\u003ce-mail\u003e\u0027, senha: \u0027\u003csenha\u003e\u0027, data nasc: \u0027\u003cnascimento\u003e\u0027 e sexo: \u0027\u003csexo\u003e\u0027\r\n\tE inserir seu dados de endereço como: \u0027\u003cendereco\u003e\u0027 , \u0027\u003ccidade\u003e\u0027 , \u0027\u003cestado\u003e\u0027, tel: \u0027\u003ctelefone\u003e\u0027 e alternativo: \u0027\u003cendereco_alternativo\u003e\u0027\r\n\tE a opção register for selecionada\r\n\tEntão o cadastro é efetivado com sucesso\r\n\t\r\n\tExemplos:\r\n\t| cliente      | e-mail       | senha | nascimento  | sexo | endereco   | cidade | estado  | telefone  | endereco_alternativo    |\r\n\t| Jose da Silva| ze3@mail.com | 12345 |  12/02/1990 |  M   | 126 street | Dothan | Alabama | 9453-3432 | 430 Landmark Dr, Dothan |","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/Hp/TestesNovigi/automationPratice/src/test/resources/features/CadastroCliente.feature","feature":{"location":{"line":2,"column":1},"language":"pt","keyword":"Funcionalidade","name":"Cadastro de clientes no e-commerce My Store","children":[{"scenario":{"location":{"line":5,"column":1},"tags":[{"location":{"line":4,"column":1},"name":"@CadastroDeCliente","id":"37638e38-271a-46d8-b120-ddee34a66c86"}],"keyword":"Cenário","name":"Cadastro de cliente válido","steps":[{"location":{"line":6,"column":2},"keyword":"Dado ","text":"que seja acessada a opção de cadastro na aplicação My Store","id":"84089605-8ec9-4bc0-93b0-0348ad688094"},{"location":{"line":7,"column":2},"keyword":"Quando ","text":"o cliente inserir seus dados pessoais com nome: \u0027\u003ccliente\u003e\u0027, email: \u0027\u003ce-mail\u003e\u0027, senha: \u0027\u003csenha\u003e\u0027, data nasc: \u0027\u003cnascimento\u003e\u0027 e sexo: \u0027\u003csexo\u003e\u0027","id":"deb68139-96d7-49e0-b86b-e4669a644851"},{"location":{"line":8,"column":2},"keyword":"E ","text":"inserir seu dados de endereço como: \u0027\u003cendereco\u003e\u0027 , \u0027\u003ccidade\u003e\u0027 , \u0027\u003cestado\u003e\u0027, tel: \u0027\u003ctelefone\u003e\u0027 e alternativo: \u0027\u003cendereco_alternativo\u003e\u0027","id":"90efb372-580a-498c-b8d2-dc8ee4afd402"},{"location":{"line":9,"column":2},"keyword":"E ","text":"a opção register for selecionada","id":"da628a9d-a280-4b1e-991d-29e17cf98f34"},{"location":{"line":10,"column":2},"keyword":"Então ","text":"o cadastro é efetivado com sucesso","id":"f423ad6f-2fe4-41d4-8159-373135cddb99"}],"examples":[{"location":{"line":12,"column":2},"keyword":"Exemplos","tableHeader":{"location":{"line":13,"column":2},"cells":[{"location":{"line":13,"column":4},"value":"cliente"},{"location":{"line":13,"column":19},"value":"e-mail"},{"location":{"line":13,"column":34},"value":"senha"},{"location":{"line":13,"column":42},"value":"nascimento"},{"location":{"line":13,"column":56},"value":"sexo"},{"location":{"line":13,"column":63},"value":"endereco"},{"location":{"line":13,"column":76},"value":"cidade"},{"location":{"line":13,"column":85},"value":"estado"},{"location":{"line":13,"column":95},"value":"telefone"},{"location":{"line":13,"column":107},"value":"endereco_alternativo"}],"id":"cfb9aaaf-d7bb-4a6f-9b11-542d78456cb2"},"tableBody":[{"location":{"line":14,"column":2},"cells":[{"location":{"line":14,"column":4},"value":"Jose da Silva"},{"location":{"line":14,"column":19},"value":"ze3@mail.com"},{"location":{"line":14,"column":34},"value":"12345"},{"location":{"line":14,"column":43},"value":"12/02/1990"},{"location":{"line":14,"column":57},"value":"M"},{"location":{"line":14,"column":63},"value":"126 street"},{"location":{"line":14,"column":76},"value":"Dothan"},{"location":{"line":14,"column":85},"value":"Alabama"},{"location":{"line":14,"column":95},"value":"9453-3432"},{"location":{"line":14,"column":107},"value":"430 Landmark Dr, Dothan"}],"id":"fcfa8821-057d-472e-abf0-785a6ca668a0"}],"id":"f7edf2f5-748f-4993-bd96-9b7e33078e25"}],"id":"c8ceddcb-b605-4fb4-bb97-98c78f591376"}}]}}},{"pickle":{"id":"8d44ed35-0b7d-4b44-8de3-1434bf7728af","uri":"file:///C:/Users/Hp/TestesNovigi/automationPratice/src/test/resources/features/CadastroCliente.feature","name":"Cadastro de cliente válido","language":"pt","steps":[{"text":"que seja acessada a opção de cadastro na aplicação My Store","id":"b2a4d0a0-89f0-4e2d-a449-b539b8009029","astNodeIds":["84089605-8ec9-4bc0-93b0-0348ad688094","fcfa8821-057d-472e-abf0-785a6ca668a0"]},{"text":"o cliente inserir seus dados pessoais com nome: \u0027Jose da Silva\u0027, email: \u0027ze3@mail.com\u0027, senha: \u002712345\u0027, data nasc: \u002712/02/1990\u0027 e sexo: \u0027M\u0027","id":"17bceb50-7902-426b-b8f1-a756075c914f","astNodeIds":["deb68139-96d7-49e0-b86b-e4669a644851","fcfa8821-057d-472e-abf0-785a6ca668a0"]},{"text":"inserir seu dados de endereço como: \u0027126 street\u0027 , \u0027Dothan\u0027 , \u0027Alabama\u0027, tel: \u00279453-3432\u0027 e alternativo: \u0027430 Landmark Dr, Dothan\u0027","id":"72d53d1d-967e-4600-a58a-983b039e18b4","astNodeIds":["90efb372-580a-498c-b8d2-dc8ee4afd402","fcfa8821-057d-472e-abf0-785a6ca668a0"]},{"text":"a opção register for selecionada","id":"d5616272-36c4-4b89-9429-bffe18c5824d","astNodeIds":["da628a9d-a280-4b1e-991d-29e17cf98f34","fcfa8821-057d-472e-abf0-785a6ca668a0"]},{"text":"o cadastro é efetivado com sucesso","id":"fb0bc51b-322a-4d5b-ab89-57d68402b4ab","astNodeIds":["f423ad6f-2fe4-41d4-8159-373135cddb99","fcfa8821-057d-472e-abf0-785a6ca668a0"]}],"tags":[{"name":"@CadastroDeCliente","astNodeId":"37638e38-271a-46d8-b120-ddee34a66c86"}],"astNodeIds":["c8ceddcb-b605-4fb4-bb97-98c78f591376","fcfa8821-057d-472e-abf0-785a6ca668a0"]}},{"source":{"uri":"file:///C:/Users/Hp/TestesNovigi/automationPratice/src/test/resources/features/EfetivacaoCompra.feature","data":"#language: pt\nFuncionalidade: Efetivação de compra no e-commerce My Store \n\n@EfetivacaoDeCompra\nCenário: Compra de produto com sucesso\n\tDado que seja efetuado login do cliente \u0027\u003ccliente\u003e\u0027 com email: \u0027\u003cemail\u003e\u0027 e senha: \u0027\u003csenha\u003e\u0027 na loja My Store\n\tQuando o produto \u0027\u003cproduto\u003e\u0027 for selecionado\n\tE adicionado ao carrinho na quantidade \u0027\u003cquantidade\u003e\u0027\n\tEntão a compra será finalizada com sucesso\n\t\n\tExemplos:\n\t| cliente       | email             | senha  | produto    | quantidade |\n\t| Jose da Silva | ze1@mail.com      | 12345  |  dress     |   1        |\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/Hp/TestesNovigi/automationPratice/src/test/resources/features/EfetivacaoCompra.feature","feature":{"location":{"line":2,"column":1},"language":"pt","keyword":"Funcionalidade","name":"Efetivação de compra no e-commerce My Store","children":[{"scenario":{"location":{"line":5,"column":1},"tags":[{"location":{"line":4,"column":1},"name":"@EfetivacaoDeCompra","id":"cf9b4c4d-7eb7-4398-97d2-31e0aa6d8bfe"}],"keyword":"Cenário","name":"Compra de produto com sucesso","steps":[{"location":{"line":6,"column":2},"keyword":"Dado ","text":"que seja efetuado login do cliente \u0027\u003ccliente\u003e\u0027 com email: \u0027\u003cemail\u003e\u0027 e senha: \u0027\u003csenha\u003e\u0027 na loja My Store","id":"bad8fe7c-6fb5-470f-bd91-7c1e935b6a14"},{"location":{"line":7,"column":2},"keyword":"Quando ","text":"o produto \u0027\u003cproduto\u003e\u0027 for selecionado","id":"fb48dc75-2d1a-4f23-8d24-f252ed3c791a"},{"location":{"line":8,"column":2},"keyword":"E ","text":"adicionado ao carrinho na quantidade \u0027\u003cquantidade\u003e\u0027","id":"9b60cefc-8d44-4d24-90b1-30de7082c138"},{"location":{"line":9,"column":2},"keyword":"Então ","text":"a compra será finalizada com sucesso","id":"c7db682a-87aa-4c53-9c33-7607444d0741"}],"examples":[{"location":{"line":11,"column":2},"keyword":"Exemplos","tableHeader":{"location":{"line":12,"column":2},"cells":[{"location":{"line":12,"column":4},"value":"cliente"},{"location":{"line":12,"column":20},"value":"email"},{"location":{"line":12,"column":40},"value":"senha"},{"location":{"line":12,"column":49},"value":"produto"},{"location":{"line":12,"column":62},"value":"quantidade"}],"id":"fe4d4edb-1be5-403d-95c1-d47a0809acf6"},"tableBody":[{"location":{"line":13,"column":2},"cells":[{"location":{"line":13,"column":4},"value":"Jose da Silva"},{"location":{"line":13,"column":20},"value":"ze1@mail.com"},{"location":{"line":13,"column":40},"value":"12345"},{"location":{"line":13,"column":50},"value":"dress"},{"location":{"line":13,"column":64},"value":"1"}],"id":"f27505a2-e58e-4f42-97cb-10873f242ebe"}],"id":"8166fc1a-bc1f-4096-ab24-383
