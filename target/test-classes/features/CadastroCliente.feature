@@ -11,4 +11,4 @@ Cenário: Cadastro de cliente válido
 	
 	Exemplos:
 	| cliente      | e-mail       | senha | nascimento  | sexo | endereco   | cidade | estado  | telefone  | endereco_alternativo    |
-	| Jose da Silva| ze3@mail.com | 12345 |  12/02/1990 |  M   | 126 street | Dothan | Alabama | 9453-3432 | 430 Landmark Dr, Dothan |
+	| Jose da Silva| ze5@mail.com | 12345 |  12/02/1990 |  M   | 126 street | Dothan | Alabama | 9453-3432 | 430 Landmark Dr, Dothan |
